@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <title>Сайт для производственной практики</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="header_nav">
+        <div class="header_left">
+            <ul class="left_list">
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Новинки</a></li>
+            </ul>
+        </div>
+        <div class="header_logo">
+            <a href="#">
+                <div class="logo_btn"><img src="images/header/logo.svg" alt="Логотип"></div>
+            </a>
+        </div>
+        <div class="header_right">
+            <ul class="right_list">
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="header_actions">
+            <ul class="actions_list">
+                <li class="actions_list_item">
+                    <a href="#" class="search_btn">
+                        <span class="search_btn"><img src="images/header/search.svg" alt="Поиск"></span>
+                    </a>
+                    <a href="#" class="bag_btn">
+                        <span class="bag_btn"><img src="images/header/bag.svg" alt="Корзина"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="discount-banner">
+            <img src="images/discount-banner.jpg" alt="Скидки и акции">
+            <div class="banner-overlay">
+                <div class="banner-text">
+                    <h2>Скидки до 50%</h2>
+                    <p>Только этой весной!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="categories">
+            <a href="earrings.html" class="category-card">
+                <img src="images/categories/earrings.jpg" alt="Серьги">
+                <div class="category-text">СЕРЬГИ</div>
+            </a>
+            <a href="necklaces.html" class="category-card">
+                <img src="images/categories/necklaces.jpg" alt="Колье">
+                <div class="category-text">КОЛЬЕ</div>
+            </a>
+            <a href="pendants.html" class="category-card">
+                <img src="images/categories/bracelets.jpg" alt="Браслеты">
+                <div class="category-text">БРАСЛЕТЫ</div>
+            </a>
+        </div>
+  
+        <div class="product_carousel">
+            <span class="h2">ЧАСТО ПОКУПАЮТ</span>
+            <button class="carousel_btn_prev" aria-label="Предыдущий">&#10094;</button>
+            <div class="carousel_container">
+                <div class="carousel_card">
+                    <img src="images/carousel/necklace1.jpg" alt="Колье 1">
+                    <h3>Колье Mini Bas</h3>
+                </div>
+                <div class="carousel_card">
+                    <img src="images/carousel/necklace2.jpg" alt="Колье 2">
+                    <h3>Колье Mini Relief</h3>
+                </div>
+                <div class="carousel_card">
+                    <img src="images/carousel/earrings1.jpg" alt="Серьги 1">
+                    <h3>Серьги Relief</h3>
+                </div>
+                <div class="carousel_card">
+                    <img src="images/carousel/earrings2.jpg" alt="Серьги 2">
+                    <h3>Серьги Bas</h3>
+                </div>
+                <div class="carousel_card">
+                    <img src="images/carousel/bracelet1.jpg" alt="Браслет 1">
+                    <h3>Браслет Barel </h3>
+                </div>
+                <div class="carousel_card">
+                    <img src="images/carousel/bracelet2.jpg" alt="Браслет 2">
+                    <h3>Браслет Release</h3>
+                </div>
+            </div>
+            <button class="carousel_btn_next" aria-label="Следующий">&#10095;</button> 
+        </div>
+ 
+        <div class="product_container">
+            <div class="product_cards">
+                <div class="product_card">
+                    <img src="images/product_card/necklace1.jpg" alt="Колье 1" />
+                    <div class="product_info">
+                        <h3>Колье и браслет</h3>
+                        <div class="price">
+                            <del>33000 ₽</del>
+                            <span class="new-price">29000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <img src="images/product_card/necklace2.jpeg" alt="Колье 2" />
+                    <div class="product_info">
+                        <h3>Колье</h3>
+                        <div class="price">
+                            <del>22000 ₽</del>
+                            <span class="new-price">19000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <img src="images/product_card/bracelet1.jpg" alt="Браслет 1" />
+                    <div class="product_info">
+                        <h3>Браслет</h3>
+                        <div class="price">
+                            <del>25000 ₽</del>
+                            <span class="new-price">20000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <img src="images/product_card/necklace3.jpg" alt="Колье 3" />
+                    <div class="product_info">
+                        <h3>Колье</h3>
+                        <div class="price">
+                            <del>25000 ₽</del>
+                            <span class="new-price">19000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <img src="images/product_card/necklace4.jpg" alt="Колье 4" />
+                    <div class="product_info">
+                        <h3>Колье</h3>
+                        <div class="price">
+                            <del>13000 ₽</del>
+                            <span class="new-price">11000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <img src="images/product_card/necklace5.jpg" alt="Колье 5" />
+                    <div class="product_info">
+                        <h3>Колье</h3>
+                        <div class="price">
+                            <del>16000 ₽</del>
+                            <span class="new-price">14000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Наши достоинства</h2>
+            <div class="features_inner">
+                <div class="features_items">
+                    <div class="feature_item">
+                        <span class="features_icon_inner"><img src="images/features/quality.svg" alt="Качество"></span>
+                        <span class="features_title">Гарантия качества</span>
+                    </div>
+                    <div class="feature_item">
+                        <span class="features_icon_inner"><img src="images/features/delivery.svg" alt="Доставка"></span>
+                        <span class="features_title">Быстрая доставка</span>
+                    </div>
+                    <div class="feature_item">
+                        <span class="features_icon_inner"><img src="images/features/manager.svg" alt="Менеджер"></span>
+                        <span class="features_title">Персональный менеджер</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+   
+    <footer class="footer">
+        <div class="footer_bottom">
+            <div class="footer_bottom_inner">
+                <div class="footer_lists_item">
+                    <ul class="footer_list">
+                        <li class="footer_list_item">
+                            <span class="footer_list_title">Контакты</span>
+                        </li>
+                        <li class="footer_list_item">
+                            <a href="#" class="footer_link">Email: jewellery@j.com</a>
+                        </li>
+                        <li class="footer_list_item">
+                            <a href="#" class="footer_link">Телефон: +7 123 456 789</a>
+                        </li>
+                    </ul>
+                    <ul class="footer_list">
+                        <li class="footer_list_item">
+                            <span class="footer_list_title">Доставка</span>
+                        </li>
+                        <li class="footer_list_item">
+                            <a href="#" class="footer_link">Способы доставки</a>
+                        </li>
+                        <li class="footer_list_item">
+                            <a href="#" class="footer_link">Сроки доставки</a>
+                        </li>
+                    </ul>
+                    <ul class="footer_list">
+                        <li class="footer_list_item">
+                            <span class="footer_list_title">О нас</span>
+                        </li>
+                        <li class="footer_list_item">
+                            <a href="#" class="footer_link">О компании</a>
+                        </li>
+                        <li class="footer_list_item">
+                            <a href="#" class="footer_link">Наша команда</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
