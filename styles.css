@@ -26,15 +26,7 @@ body {
     align-items: center;
 }
 
-.header_actions {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
+ 
 
 .actions_list {
     list-style: none;
@@ -81,12 +73,25 @@ body {
         padding: 3px;  
     }
 }
- 
+
 @media (max-width: 480px) {
     .header_nav {
-        flex-wrap: wrap; 
-        gap: 10px;  
+        flex-wrap: wrap; /* Позволяем элементам переноситься */
+        gap: 10px;
     }
+
+    .header_actions {
+        position: absolute; /* Иконки остаются в правом углу */
+        right: 10px; /* Уменьшаем отступ */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .search_btn img, .bag_btn img {
+        width: 20px; /* Уменьшаем размер иконок */
+        height: 20px;
+    }
+}
 
     .left_list, .right_list {
         flex-direction: column; 
