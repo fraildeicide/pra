@@ -8,12 +8,11 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Равномерное распределение между элементами */
-    flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
+    justify-content: center;
     padding: 0 20px;
 }
 
-.left_list, .right_list {
+.left_list {
     list-style: none;
     display: flex;
     gap: 15px;
@@ -25,15 +24,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1; /* Логотип занимает оставшееся пространство */
-    min-width: 120px; /* Минимальная ширина для логотипа */
 }
 
 .header_actions {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-top: 10px; /* Для мобильных устройств */
 }
 
 .actions_list {
@@ -49,379 +49,403 @@ body {
     padding: 5px;
 }
 
-.left_list a, .right_list a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 14px; /* Сделаем текст чуть меньше */
-    white-space: nowrap; /* Запретим перенос текста */
-}
-
 .right_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     gap: 15px;
 }
 
+    .left_list a, .right_list a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 14px; /* Уменьшенный размер текста для компактности */
+        white-space: nowrap; /* Запрещаем перенос текста */
+    }
+
 /* Адаптивность для планшетов */
 @media (max-width: 768px) {
     .header_nav {
-        justify-content: center; /* Центрируем элементы */
+        justify-content: space-between; /* Выравниваем ссылки и элементы по сторонам */
     }
 
-    .left_list, .right_list {
-        display: none; /* Скрываем текстовые меню на маленьких экранах */
+    .left_list {
+        gap: 10px; /* Уменьшаем расстояние между ссылками */
     }
 
-    .header_logo {
-        flex: 0 0 auto; /* Логотип не растягивается */
+    .right_list {
+        gap: 10px; /* Уменьшаем расстояние между ссылками */
+    }
+
+    .search_btn, .bag_btn {
+        padding: 3px; /* Уменьшаем отступы кнопок для компактности */
     }
 }
 
 /* Адаптивность для мобильных телефонов */
 @media (max-width: 480px) {
     .header_nav {
-        flex-direction: column; /* Элементы размещаются вертикально */
-        align-items: center;
-        gap: 10px;
+        flex-wrap: wrap; /* Позволяем элементам переноситься */
+        gap: 10px; /* Добавляем отступы между блоками */
     }
+
+    .left_list, .right_list {
+        flex-direction: column; /* Ссылки располагаются в столбик */
+        gap: 8px; /* Меньшие отступы между элементами */
+        align-items: flex-start; /* Выравниваем по левому краю */
+    }
+
+        .left_list a, .right_list a {
+            font-size: 12px; /* Уменьшаем шрифт для экономии места */
+        }
 
     .header_actions {
-        flex-direction: row; /* Кнопки поиска и корзины выравниваются в ряд */
-        gap: 5px;
+        position: static; /* Убираем абсолютное позиционирование для корректной адаптации */
+        transform: none; /* Отключаем смещение */
+        justify-content: flex-end; /* Выравниваем кнопки по правой стороне */
+        width: 100%; /* Растягиваем блок по ширине */
     }
 
-    .content img {
-        width: 350px;
-        height: 350px;
+    .search_btn img, .bag_btn img {
+        width: 20px; /* Уменьшаем размер иконок */
+        height: 20px;
     }
+}
 
-    .actions_list_item img {
-        width: 30px;
-        height: 30px;
-    }
 
-    .features_icon_inner img {
-        width: 49px;
-        height: 49px;
-    }
+.content img {
+    width: 350px;
+    height: 350px;
+}
 
-    .logo_btn img {
-        width: 120px;
-        height: 85px;
-        margin: 0;
-        padding: 0;
-        object-fit: contain;
-    }
+.actions_list_item img {
+    width: 30px;
+    height: 30px;
+}
 
-    .logo_btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        height: auto;
-        overflow: hidden;
-    }
+.features_icon_inner img {
+    width: 49px;
+    height: 49px;
+}
 
-    .product_container {
-        margin: 0 auto;
-        max-width: 1200px;
-        overflow-x: hidden;
-        width: 100%;
-    }
+.logo_btn img {
+    width: 120px;
+    height: 85px;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+}
 
+.logo_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    overflow: hidden;  
+}
+.product_container {
+    margin: 0 auto;
+    max-width: 1200px;  
+    overflow-x: hidden;  
+    width: 100%;
+}
+
+.product_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    margin-bottom: 25px;
+}
+
+.product_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product_info {
+    margin-top: 10px;  
+}
+
+@media (max-width: 768px) {
     .product_cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 40px;
-        margin-bottom: 25px;
+        grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд на планшетах */
+    }
+}
+
+@media (max-width: 480px) {
+    .product_cards {
+        grid-template-columns: repeat(1, 1fr); /* 1 карточка в ряд на телефонах */
+    }
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 60px; 
+}
+
+.category-card {
+    position: relative;
+    width: 390px;  
+    height: 390px; 
+    box-sizing: border-box;
+    overflow: hidden;  
+}
+
+ .category-card img {
+   width: 100%;  
+   height: 100%;  
+   object-fit: cover;  
+   display: block;
     }
 
-    .product_card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+.category-text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: black;
+    font-weight: 600;
+    padding: 5px;
+    font-size: 14px;
+}
 
-    .product_info {
-        margin-top: 10px;
-    }
-
-    @media (max-width: 768px) {
-        .product_cards {
-            grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд на планшетах */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .product_cards {
-            grid-template-columns: repeat(1, 1fr); /* 1 карточка в ряд на телефонах */
-        }
-    }
-
-    .categories {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-        margin-bottom: 60px;
-    }
-
+@media (max-width: 768px) {
     .category-card {
-        position: relative;
-        width: 390px;
-        height: 390px;
-        box-sizing: border-box;
-        overflow: hidden;
+        width: calc(50% - 10px);  
+        height: auto;  
     }
+}
 
-        .category-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-    .category-text {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        color: black;
-        font-weight: 600;
-        padding: 5px;
-        font-size: 14px;
+@media (max-width: 480px) {
+    .category-card {
+        width: 100%; 
+        height: auto;  
     }
+}
 
-    @media (max-width: 768px) {
-        .category-card {
-            width: calc(50% - 10px);
-            height: auto;
-        }
-    }
+.product_carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;  
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 45px;
+}
 
-    @media (max-width: 480px) {
-        .category-card {
-            width: 100%;
-            height: auto;
-        }
-    }
+.carousel_container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-    .product_carousel {
-        position: relative;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        overflow: hidden;
-        margin-bottom: 45px;
-    }
+.carousel_card {
+    flex: 0 0 25%;  
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
 
-    .carousel_container {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-    }
+.carousel_card img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+   margin: 0 auto;
+}
 
+.carousel_btn_prev,
+.carousel_btn_next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel_btn_prev {
+    left: 10px;
+}
+
+.carousel_btn_next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
     .carousel_card {
-        flex: 0 0 25%;
-        box-sizing: border-box;
-        padding: 10px;
-        text-align: center;
+        flex: 0 0 50%; 
     }
+}
 
-        .carousel_card img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-    .carousel_btn_prev,
-    .carousel_btn_next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 10;
+@media (max-width: 480px) {
+    .carousel_card {
+        flex: 0 0 100%; 
     }
+}
 
-    .carousel_btn_prev {
-        left: 10px;
-    }
+.features {
+    text-align: center;  
+    padding: 20px;
+    margin-bottom: 40px;
+}
 
-    .carousel_btn_next {
-        right: 10px;
-    }
+.features_inner {
+    max-width: 1200px;  
+    margin: 0 auto; 
+}
 
-    @media (max-width: 768px) {
-        .carousel_card {
-            flex: 0 0 50%;
-        }
-    }
+.features_items {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;  
+    flex-wrap: wrap; 
+}
 
-    @media (max-width: 480px) {
-        .carousel_card {
-            flex: 0 0 100%;
-        }
-    }
+.feature_item {
+    flex: 1;  
+    min-width: 200px;  
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+}
 
-    .features {
-        text-align: center;
-        padding: 20px;
-        margin-bottom: 40px;
-    }
+.features_icon_inner img {
+    width: 60px;  
+    height: 60px;
+    margin-bottom: 10px;  
+}
 
-    .features_inner {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+.features_title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
 
+@media (max-width: 768px) {
     .features_items {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        flex-wrap: wrap;
+        flex-direction: column; 
+        gap: 30px; 
+    }
+}
+.footer {
+    background-color: #333;  
+    color: #fff; 
+    padding: 40px 0;  
+    width: 100%;  
+    max-width: 100vw;
+}
+
+.footer_lists_item {
+    display: flex;
+    justify-content: space-between;  
+    align-items: flex-start; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+.footer_list {
+    flex: 1;  
+    margin: 0 10px;  
+    list-style: none;  
+    padding: 0;  
+}
+
+.footer_list_title {
+    font-weight: bold;  
+    display: block;  
+    margin-bottom: 20px;  
+}
+
+.footer_list_item {
+    margin-bottom: 12px; 
+}
+
+.footer_list_item a {
+    color: #fff;  
+    text-decoration: none;  
+}
+
+.footer_list_item a:hover {
+    text-decoration: underline;  
+}
+
+.discount-banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 55px; 
+}
+
+    .discount-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
-    .feature_item {
-        flex: 1;
-        min-width: 200px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .features_icon_inner img {
-        width: 60px;
-        height: 60px;
+.banner-text {
+    text-align: center;
+    color: white;
+}
+
+    .banner-text h2 {
+        font-size: 36px;
+        font-weight: bold;
         margin-bottom: 10px;
     }
 
-    .features_title {
-        font-size: 16px;
-        font-weight: bold;
-        color: #333;
+    .banner-text p {
+        font-size: 24px;
+        margin: 0;
     }
 
-    @media (max-width: 768px) {
-        .features_items {
-            flex-direction: column;
-            gap: 30px;
-        }
+.price {
+    display: flex; 
+    align-items: center; 
+    gap: 10px;  
+    
+}
+
+del {
+    font-size: 14px; 
+    color: #999;  
+    text-decoration: line-through; 
+}
+
+.new-price {
+    font-size: 16px;  
+    color: red; 
+    font-weight: bold;  
+}
+
+a {
+    color: black;  
+    text-decoration: none;  
+    transition: color 0.3s ease; 
+}
+
+    a:hover {
+        color: grey;  
     }
-
-    .footer {
-        background-color: #333;
-        color: #fff;
-        padding: 40px 0;
-        width: 100%;
-        max-width: 100vw;
-    }
-
-    .footer_lists_item {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .footer_list {
-        flex: 1;
-        margin: 0 10px;
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer_list_title {
-        font-weight: bold;
-        display: block;
-        margin-bottom: 20px;
-    }
-
-    .footer_list_item {
-        margin-bottom: 12px;
-    }
-
-        .footer_list_item a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-            .footer_list_item a:hover {
-                text-decoration: underline;
-            }
-
-    .discount-banner {
-        position: relative;
-        width: 100%;
-        height: 300px;
-        overflow: hidden;
-        margin-bottom: 55px;
-    }
-
-        .discount-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-    .banner-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .banner-text {
-        text-align: center;
-        color: white;
-    }
-
-        .banner-text h2 {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .banner-text p {
-            font-size: 24px;
-            margin: 0;
-        }
-
-    .price {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    del {
-        font-size: 14px;
-        color: #999;
-        text-decoration: line-through;
-    }
-
-    .new-price {
-        font-size: 16px;
-        color: red;
-        font-weight: bold;
-    }
-
-    a {
-        color: black;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-        a:hover {
-            color: grey;
-        }
