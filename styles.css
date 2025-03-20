@@ -101,8 +101,8 @@ body {
 
 .product_cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  
-    grid-gap: 15px;  
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 15px;
     margin-bottom: 25px;
 }
 
