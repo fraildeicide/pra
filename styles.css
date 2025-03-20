@@ -60,55 +60,53 @@ body {
     .left_list a, .right_list a {
         text-decoration: none;
         color: inherit;
-        font-size: 14px; /* Уменьшенный размер текста для компактности */
-        white-space: nowrap; /* Запрещаем перенос текста */
+        font-size: 14px; 
+        white-space: nowrap;  
     }
-
-/* Адаптивность для планшетов */
+ 
 @media (max-width: 768px) {
     .header_nav {
-        justify-content: space-between; /* Выравниваем ссылки и элементы по сторонам */
+        justify-content: space-between; 
     }
 
     .left_list {
-        gap: 10px; /* Уменьшаем расстояние между ссылками */
+        gap: 10px;  
     }
 
     .right_list {
-        gap: 10px; /* Уменьшаем расстояние между ссылками */
+        gap: 10px;  
     }
 
     .search_btn, .bag_btn {
-        padding: 3px; /* Уменьшаем отступы кнопок для компактности */
+        padding: 3px;  
     }
 }
-
-/* Адаптивность для мобильных телефонов */
+ 
 @media (max-width: 480px) {
     .header_nav {
-        flex-wrap: wrap; /* Позволяем элементам переноситься */
-        gap: 10px; /* Добавляем отступы между блоками */
+        flex-wrap: wrap; 
+        gap: 10px;  
     }
 
     .left_list, .right_list {
-        flex-direction: column; /* Ссылки располагаются в столбик */
-        gap: 8px; /* Меньшие отступы между элементами */
-        align-items: flex-start; /* Выравниваем по левому краю */
+        flex-direction: column; 
+        gap: 8px;  
+        align-items: flex-start; 
     }
 
         .left_list a, .right_list a {
-            font-size: 12px; /* Уменьшаем шрифт для экономии места */
+            font-size: 12px; 
         }
 
     .header_actions {
-        position: static; /* Убираем абсолютное позиционирование для корректной адаптации */
-        transform: none; /* Отключаем смещение */
-        justify-content: flex-end; /* Выравниваем кнопки по правой стороне */
-        width: 100%; /* Растягиваем блок по ширине */
+        position: static; 
+        transform: none;  
+        justify-content: flex-end;  
+        width: 100%;  
     }
 
     .search_btn img, .bag_btn img {
-        width: 20px; /* Уменьшаем размер иконок */
+        width: 20px;  
         height: 20px;
     }
 }
