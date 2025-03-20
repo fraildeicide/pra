@@ -95,13 +95,15 @@ body {
     overflow: hidden;  
 }
 .product_container {
-    margin: 0 auto;  
+    margin: 0 auto;
+    width: 100%; /* √арантируем, что контейнер занимает всю доступную ширину */
+    overflow-x: hidden; /* ”бираем возможность прокрутки вправо */
 }
 
 .product_cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  
-    grid-gap: 15px;  
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* јвтоматически подстраиваем количество колонок */
+    gap: 15px; /* –ассто€ние между карточками */
     margin-bottom: 25px;
 }
 
@@ -110,10 +112,11 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 100%; /* ќграничиваем ширину карточки */
 }
 
 .product_info {
-    margin-top: 10px;  
+    margin-top: 10px;
 }
 
 .categories {
