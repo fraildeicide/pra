@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.querySelector('.carousel_btn_next');
     const cardWidth = document.querySelector('.carousel_card').offsetWidth;
     const totalCards = carouselContainer.children.length;
-    const visibleCards = 4; // Количество видимых карточек
+    const visibleCards = 4;  
     let currentPosition = 0;
 
     prevButton.addEventListener('click', () => {
